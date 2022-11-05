@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index.html ejemplo HandleBarsJS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <span>Cargando....</span>
+    <script>
+        const templateStr =
+        `
+        <h1> Datos personales</h1>
+        <ul>
+            <li> Nombre: {{nombre}}</li>
+            <li> Apellido: {{apellido}}</li>
+            <li> Edad: {{edad}}</li>
+            <li> Email: {{email}}</li>
+            <li> Telefono: {{telefono}}</li>
+        </ul>
+        `
+
+        const templete = Handlebars.compile(templateStr)
+        const context = {
+            nombre: 'Agustin',
+            apellido: 'Giaccone',
+            edad:21,
+            email:'agustintgiaccone1999@gmail.com',
+            telefono:3547640981
+        }
+
+        const html = templete(context)
+        document.querySelector('span').innerHTML = html
+
+    </script>
+</body>
+
+</html>

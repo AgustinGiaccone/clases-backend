@@ -31,7 +31,7 @@ app.get ('/',(req,res)=>{
     res.render('plantilla1', datos)
 })
 
-const port = 8080
+const port = 8010
 const server = app.listen(port,()=>{
     console.log(`puerto http://localhost:${port}`)
 })
